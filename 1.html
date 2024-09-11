@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wooden Decor Shop</title>
+    <style>
+        /* Basic Styles */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+            color: #3c2a1d; /* Dark Wood Color */
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            background-color: #8b5e3c; /* Wood Brown */
+            padding: 15px 0;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff; /* White */
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            font-weight: 500;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #6d3f1f; /* Darker Wood Brown */
+            color: #ffffff; /* White */
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 20px;
+            margin-top: 50px;
+            min-height: 100vh;
+            color: #3c2a1d; /* Dark Wood Color */
+            text-align: center;
+        }
+
+        /* Home Section Specific */
+        #home {
+            background: url('wooden_decor_background.jpg') no-repeat center center/cover;
+            padding-top: 200px;
+            height: 100vh;
+            background-color: rgba(255, 235, 205, 0.7); /* Light Wood Color with opacity */
+        }
+
+        #home h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #5a3f1d; /* Medium Wood Color */
+        }
+
+        #home p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            color: #5a3f1d; /* Medium Wood Color */
+        }
+
+        .btn {
+            background-color: #a0522d; /* Wood Brown */
+            color: #ffffff; /* White */
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #8b4513; /* Darker Wood Brown */
+        }
+
+        /* About Section */
+        #about {
+            background: url('wood_texture_background.jpg') no-repeat center center/cover;
+            background-color: rgba(255, 235, 205, 0.7); /* Light Wood Color with opacity */
+        }
+
+        #about h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #5a3f1d; /* Medium Wood Color */
+        }
+
+        #about p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            color: #3c2a1d; /* Dark Wood Color */
+        }
+
+        /* Items Section */
+        #items {
+            background: url('wooden_items_background.jpg') no-repeat center center/cover;
+            background-color: rgba(255, 235, 205, 0.7); /* Light Wood Color with opacity */
+        }
+
+        #items h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #5a3f1d; /* Medium Wood Color */
+        }
+
+        #items .item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* White with opacity */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #items .item img {
+            max-width: 120px;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        #items .item .item-info {
+            flex-grow: 1;
+            text-align: left;
+            color: #3c2a1d; /* Dark Wood Color */
+        }
+
+        #items .item .item-info h3 {
+            margin: 0;
+            color: #5a3f1d; /* Medium Wood Color */
+        }
+
+        #items .item .item-info p {
+            margin: 5px 0;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            background: url('wooden_testimonials_background.jpg') no-repeat center center/cover;
+            background-color: rgba(255, 235, 205, 0.7); /* Light Wood Color with opacity */
+        }
+
+        #testimonials h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #5a3f1d; /* Medium Wood Color */
+        }
+
+        .testimonial {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* White with opacity */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #3c2a1d; /* Dark Wood Color */
+        }
+
+        .testimonial .author {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #a0522d; /* Wood Brown */
+        }
+
+        /* Contact Section */
+        #contact {
+            background: url('wooden_contact_background.jpg') no-repeat center center/cover;
+            background-color: rgba(255, 235, 205, 0.7); /* Light Wood Color with opacity */
+        }
+
+        #contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #5a3f1d; /* Medium Wood Color */
+        }
+
+        #contact p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #3c2a1d; /* Dark Wood Color */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #8b5e3c; /* Wood Brown */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Scrolled Navigation Menu */
+        .scrolled {
+            background-color: rgba(139, 94, 60, 0.9); /* Darker Wood Brown with opacity */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#items">Items</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Welcome to Our Wooden Decor Shop</h1>
+        <p>Your destination for elegant and unique wooden decorative items!</p>
+        <a href="#items" class="btn">Browse Items</a>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Our Wooden Decor Shop, we take pride in offering a curated selection of handcrafted wooden items that bring warmth and charm to any space. Our collection includes a variety of decor pieces, each crafted with care and attention to detail.</p>
+        <p>From intricately designed carvings to practical and stylish wooden accessories, we have something to enhance every corner of your home. Discover the beauty and craftsmanship of our unique wooden items today.</p>
+    </section> <section id="items">
+
+        <h2>Featured Items</h2>
+        <div class="item">
+            <img src="https://i.pinimg.com/564x/b6/c3/5c/b6c35c6fa41ad1f977b3bd1ae0566cd8.jpg" alt="Wooden Carving 1" style="width:200px; height:150px;">
+            <div class="item-info">
+                <h3>Wooden Carving</h3>
+                <p>Buddha wooden statues are intricately carved representations of the Buddha, often used for spiritual and decorative purposes.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://i.pinimg.com/564x/54/ec/50/54ec5032e90104fdd6431a919481b2b4.jpg" alt="Wooden Vase" style="width:200px; height:150px;">
+            <div class="item-info">
+                <h3>Wooden Vase</h3>
+                <p>This beautiful wooden vase is perfect for holding your favorite flowers and making a statement.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://i.pinimg.com/564x/b7/ce/8a/b7ce8a8c0ea4d01c71af0253f417a9e4.jpg" alt="Wooden Clock" style="width:200px; height:150px;">
+            <div class="item-info">
+                <h3>Wooden Clock</h3>
+                <p>Add a touch of sophistication to your home with this exquisitely crafted wooden clock.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <p>"I am delighted with the quality of the wooden items I purchased from this shop. The craftsmanship is exceptional, and the pieces look stunning in my home."</p>
+            <div class="author">- Emily R.</div>
+        </div>
+        <div class="testimonial">
+            <p>"The wooden decor I bought exceeded my expectations. The service was excellent, and the delivery was prompt. Highly recommend!"</p>
+            <div class="author">- John S.</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need further information, please feel free to reach out to us. We are here to help you with any inquiries you may have.</p>
+        <p>Email: info@woodendecor.com</p>
+        <p>Phone: +91 7896544235</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Wooden Decor Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Scrolled Navigation Menu
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>
